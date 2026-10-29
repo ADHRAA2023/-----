@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقني في منهجي | مدرسة الصراط</title>
+<style>
+:root{--green:#168b70;--dark:#173b4d;--cream:#fffaf0;--burgundy:#7e2346;--yellow:#ffd166;--blue:#dff4ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--cream);color:var(--dark);line-height:1.8}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 18px #183b4d12}
+.nav{max-width:1150px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--green);font-size:1.2rem}
+.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#20a982,#87d8b7);display:grid;place-items:center;font-size:27px}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{color:var(--dark);text-decoration:none;padding:8px 12px;border-radius:12px;font-size:.94rem;font-weight:bold}
+nav a:hover{background:#e6f6ee;color:var(--green)}
+.hero{overflow:hidden;background:linear-gradient(125deg,#e2f7ee 0%,#e4f5ff 60%,#fff0f4 100%);padding:65px 22px 58px;position:relative}
+.hero-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px}
+.eyebrow{display:inline-block;background:white;color:var(--burgundy);font-weight:bold;border-radius:30px;padding:5px 14px;font-size:.9rem}
+h1{font-size:clamp(2.3rem,5vw,4.3rem);line-height:1.25;margin:18px 0 12px;color:var(--dark)}
+h1 span{color:var(--green)}
+.hero p{font-size:1.15rem;max-width:620px;color:#496474}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;text-decoration:none;padding:12px 20px;border-radius:14px;font-weight:bold;transition:.2s}
+.btn-main{background:var(--green);color:white;box-shadow:0 7px 16px #168b7030}
+.btn-main:hover{transform:translateY(-2px);background:#10765f}
+.btn-light{background:white;color:var(--dark);border:1px solid #d7e8e3}
+.art{min-height:280px;display:grid;place-items:center;position:relative}
+.art-card{width:min(340px,100%);height:270px;border-radius:36px;background:#fff;box-shadow:0 18px 45px #23475b1c;display:grid;place-items:center;position:relative;border:4px solid #ffffffa8}
+.robot{font-size:100px;filter:drop-shadow(0 8px 5px #173b4d12)}
+.float{position:absolute;background:#fff;border-radius:18px;padding:10px 14px;box-shadow:0 8px 20px #173b4d14;font-size:1.7rem}
+.f1{top:16px;right:-10px}.f2{bottom:20px;left:-15px}.f3{top:28px;left:2px;font-size:1.2rem}
+.section{max-width:1150px;margin:auto;padding:58px 22px}
+.section-head{text-align:center;max-width:720px;margin:0 auto 30px}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.5rem);margin:0 0 8px}
+.section-head p{margin:0;color:#607783}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border-radius:24px;padding:24px;border:1px solid #e8efed;box-shadow:0 8px 25px #173b4d08;display:flex;flex-direction:column;align-items:flex-start;transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #173b4d12}
+.card-icon{width:62px;height:62px;border-radius:19px;display:grid;place-items:center;font-size:31px;margin-bottom:13px}
+.c-green{background:#e0f7e9}.c-blue{background:#e1f4ff}.c-yellow{background:#fff1c8}.c-pink{background:#ffe6ee}.c-purple{background:#eee7ff}.c-orange{background:#ffeadc}
+.card h3{margin:0 0 6px;font-size:1.2rem}
+.card p{color:#607783;margin:0 0 18px;flex:1}
+.card a{color:var(--green);font-weight:bold;text-decoration:none;border-bottom:1px solid #a7dccc;padding-bottom:2px}
+.card a:hover{color:var(--burgundy)}
+.note{margin-top:22px;background:#fff7d9;border:1px solid #f5e5a6;border-radius:16px;padding:14px 18px;color:#70571b}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:#fff;border-radius:20px;padding:22px;text-align:center;border:1px solid #e8efed}
+.step-num{width:42px;height:42px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:bold;margin:0 auto 12px}
+.about{background:#edf8f3;border-radius:28px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.about h2{margin-top:0}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{background:white;border-radius:30px;padding:7px 13px;font-weight:bold;color:var(--green)}
+footer{background:var(--dark);color:white;text-align:center;padding:28px 20px}
+footer strong{color:#8ee0bd;font-size:1.1rem}
+footer p{margin:6px 0 0;color:#d4e4e8}
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.actions{justify-content:center}.art{min-height:240px}.art-card{height:220px}.robot{font-size:80px}.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.about{grid-template-columns:1fr}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{justify-content:center}.brand{width:100%;justify-content:center}nav{justify-content:center}nav a{padding:6px 8px;font-size:.85rem}.hero{padding-top:42px}.section{padding-top:42px;padding-bottom:42px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand"><div class="logo">💻</div><span>تقني في منهجي</span></div>
+    <nav aria-label="القائمة الرئيسية">
+      <a href="#home">الرئيسية</a><a href="#programs">البرامج</a><a href="#how">كيف أبدأ؟</a><a href="#about">عن المبادرة</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">🌟 نتعلّم بالتقنية ونبدع</span>
+      <h1>مرحبًا بك في<br><span>تقني في منهجي</span></h1>
+      <p>رحلتك الرقمية تبدأ هنا! اكتشف برامج تقنية ممتعة وسهلة تساعدك على الرسم والتصميم والكتابة والتعلّم باللعب.</p>
+      <div class="actions"><a class="btn btn-main" href="#programs">🚀 اكتشف البرامج</a><a class="btn btn-light" href="#about">تعرف على المبادرة</a></div>
+    </div>
+    <div class="art" aria-label="رسمة تعليمية">
+      <div class="art-card"><div class="robot">🤖</div><div class="float f1">✨</div><div class="float f2">📚</div><div class="float f3">🎨</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programs">
+  <div class="section-head">
+    <h2>اكتشف عالمك الرقمي 🎯</h2>
+    <p>اختر البرنامج الذي تحتاجه، ثم اضغط على «افتح البرنامج» للانتقال إلى موقعه.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="card-icon c-green">🧊</div><h3>تصميم ثلاثي الأبعاد</h3><p>كوّن أشكالًا ومجسمات ثلاثية الأبعاد، وجرّب أفكارك بطريقة ممتعة.</p><a href="https://www.tinkercad.com/" target="_blank" rel="noopener">افتح برنامج Tinkercad ↗</a></article>
+    <article class="card"><div class="card-icon c-blue">📝</div><h3>معالجة الكلمات</h3><p>تعلّم كتابة النصوص وتنسيق الكلمات وتغيير حجم الخط ولونه.</p><a href="https://www.microsoft365.com/" target="_blank" rel="noopener">افتح Microsoft 365 ↗</a></article>
+    <article class="card"><div class="card-icon c-yellow">🧩</div><h3>تعلّم باللعب</h3><p>تدرّب على معلوماتك من خلال أنشطة وأسئلة تفاعلية ممتعة.</p><a href="https://wordwall.net/" target="_blank" rel="noopener">افتح Wordwall ↗</a></article>
+    <article class="card"><div class="card-icon c-pink">🎨</div><h3>التصميم والإبداع</h3><p>صمّم بطاقات وعروضًا وصورًا تعليمية باستخدام قوالب جاهزة.</p><a href="https://www.canva.com/education/" target="_blank" rel="noopener">افتح Canva للتعليم ↗</a></article>
+    <article class="card"><div class="card-icon c-purple">🧠</div><h3>البرمجة للمبتدئين</h3><p>حرّك الشخصيات وصمّم قصصًا وألعابًا بسيطة باستخدام البرمجة المرئية.</p><a href="https://scratch.mit.edu/" target="_blank" rel="noopener">افتح Scratch ↗</a></article>
+    <article class="card"><div class="card-icon c-orange">📽️</div><h3>العروض التفاعلية</h3><p>استكشف الدروس والأنشطة التفاعلية التي تجمع بين الصور والأسئلة.</p><a href="https://genially.com/" target="_blank" rel="noopener">افتح Genially ↗</a></article>
+  </div>
+  <div class="note">💡 <strong>تذكّر:</strong> بعض البرامج تتطلب تسجيل الدخول أو مساعدة المعلمة. استخدم المواقع بإشراف معلمتك واتبِع تعليمات المدرسة.</div>
+</section>
+
+<section class="section" id="how">
+  <div class="section-head"><h2>كيف أبدأ؟ 👣</h2><p>ثلاث خطوات بسيطة لتبدأ رحلتك التقنية.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-num">١</div><h3>اختر البرنامج</h3><p>فكّر في المهارة التي تريد تعلّمها.</p></div>
+    <div class="step"><div class="step-num">٢</div><h3>اضغط على الرابط</h3><p>افتح البرنامج من البطاقة المناسبة.</p></div>
+    <div class="step"><div class="step-num">٣</div><h3>جرّب وتعلّم</h3><p>اتبع إرشادات المعلمة واستمتع بالإبداع.</p></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="about">
+    <div><h2>عن مبادرة تقني في منهجي 💚</h2><p>مبادرة تعليمية تهدف إلى تقريب التقنية من طلبة الحلقة الأولى، وتقديم أدوات رقمية سهلة تساعدهم على التعلّم والممارسة والإبداع داخل الصف وخارجه.</p></div>
+    <div><h3>نتعلّم مهارات تساعدنا على:</h3><div class="pills"><span class="pill">✍️ الكتابة</span><span class="pill">🎨 التصميم</span><span class="pill">🧩 حل المشكلات</span><span class="pill">💡 الإبداع</span><span class="pill">🤝 التعاون</span></div></div>
+  </div>
+</section>
+</main>
+<footer><strong>تقني في منهجي</strong><p>إعداد معلمات تقنية المعلومات بمدرسة الصراط</p><p>نتعلّم اليوم لنبدع غدًا ✨</p></footer>
+</body>
+</html>
